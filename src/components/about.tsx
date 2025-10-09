@@ -23,13 +23,13 @@ export function About() {
                 duration={1}
                 delay={0.4}
             >
-                <p className='text-white/40 text-2xl mt-5'>Passionate about entrepreneurship and coding, I try to combine both. I want to give myself the means to make a living from what I love.</p>
+                <p className='text-white/50 text-2xl mt-5'>Passionate about entrepreneurship and coding, I try to combine both. I want to give myself the means to make a living from what I love.</p>
             </BlurFadeIn>
             <BlurFadeIn
                 duration={1}
                 delay={0.6}
             >
-                <p className='text-white/40 text-2xl mt-5'>Here are some of the technologies I work with.</p>
+                <p className='text-white/50 text-2xl mt-5 font-light'>Here are some of the technologies I work with.</p>
                 <LogoLoop
                     logos={[
                         { src: "/logos/react.svg", alt: "React" },
