@@ -15,19 +15,19 @@ export function Left() {
                         duration={1}
                         delay={0.2}
                     >
-                        <a href="">17Sx</a>
+                        <a href="#about">17Sx</a>
                     </BlurFadeIn>
                     <BlurFadeIn
                         duration={1}
                         delay={0.3}
                     >
-                        <a href="">Projects</a>
+                        <a href="#projects">Projects</a>
                     </BlurFadeIn>
                     <BlurFadeIn
                         duration={1}
                         delay={0.4}
                     >
-                        <a href="">Contact</a>
+                        <a href="#contact">Contact</a>
                     </BlurFadeIn>
 
                 </div>
