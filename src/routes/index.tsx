@@ -18,7 +18,7 @@ function App() {
           width: '100%',
           height: '100%',
           zIndex: 0,
-          opacity: 0.8,
+          opacity: 0.7,
         }}
       >
         <ShaderGradient
@@ -31,7 +31,7 @@ function App() {
           color1="#2a2a2a"
           color2="#3d3d3d"
           color3="#1e1e1e"
-          brightness={1}
+          brightness={0.9}
           grain="on"
           lightType="3d"
           cDistance={4} 
