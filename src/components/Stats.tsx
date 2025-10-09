@@ -6,7 +6,7 @@ export function Stats() {
     return (
         <div id="stats" className='flex flex-col gap-6'>
             <BlurFadeIn duration={1} delay={0.8}>
-                <h2 className="text-white/50 text-2xl font-light">My Activity</h2>
+                <h2 className="text-white/50 text-2xl font-light">Activity</h2>
             </BlurFadeIn>
 
             <BlurFadeIn duration={1} delay={0.9}>

@@ -3,7 +3,7 @@ import { GithubIcon, TwitterIcon, LinkedInIcon, MailIcon } from "./ui/icons";
 
 export function Left() {
     return (
-        <div className="flex flex-col justify-between h-screen w-1/4 border-r border-white/10">
+        <div className="flex flex-col justify-between h-screen w-1/5 border-r border-white/10">
             <div className="ml-10 mt-60">
                 <div className="flex flex-col gap-1 text-white text-2xl font-bold">
                     <BlurFadeIn

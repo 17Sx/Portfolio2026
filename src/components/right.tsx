@@ -2,12 +2,12 @@ import { About } from './about';
 import { BlurFadeIn } from './BlurFadeIn';
 import { SectionBar } from './ui/SectionBar';
 import { Stats } from './Stats';
-
+import { Projects } from './Projects';
 
 export function Right() {
     return (
-        <div className="flex flex-col items-center h-screen w-2/3 overflow-y-auto">
-            <div className="flex flex-col gap-4 text-white text-2xl font-bold w-4/5 mt-30 pb-20">
+        <div className="flex flex-col items-center h-screen w-full overflow-y-auto scrollbar-hide">
+            <div className="flex flex-col gap-4 text-white text-2xl font-bold w-6/6 mt-30 pl-50 pr-50">
                 <About />
                 <BlurFadeIn
                     duration={1}
@@ -17,6 +17,7 @@ export function Right() {
                 </BlurFadeIn>
                 <Stats />
                 <SectionBar />
+                <Projects />
             </div>
         </div>
     )
