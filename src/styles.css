@@ -6,9 +6,9 @@
 
 body {
   @apply m-0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: "europa", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -135,4 +135,24 @@ code {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes blur-fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.blur-fade-in {
+  animation-name: blur-fade-in;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
