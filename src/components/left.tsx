@@ -9,7 +9,7 @@ export function Left() {
                         duration={1}
                         delay={0}
                     >
-                        <img className="w-5 h-5" src="./public/logo.png" alt="17Sx" />
+                        <img className="w-5 h-5" src="/Logo.png" alt="17Sx" />
                     </BlurFadeIn>
                     <BlurFadeIn
                         duration={1}

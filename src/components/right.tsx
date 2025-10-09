@@ -17,8 +17,8 @@ export function Right() {
                     delay={0.2}
                 >
                     <div className='flex gap-4 mt-2'>
-                        <img className='w-15 h-15 mt-1' src="./public/17sx.png" alt="17Sx" />
-                        <p className='text-white/60 text-3xl'>I'm 17Sx, a developer who enjoys <br /> building performant interfaces.</p>
+                        <img className='w-15 h-15 mt-1' src="/17sx.png" alt="17Sx" />
+                        <p className='text-white/60 text-3xl'>I'm <span className=''>17Sx</span>, a developer who enjoys <br /> building performant interfaces.</p>
                     </div>
                 </BlurFadeIn>
                 <BlurFadeIn
