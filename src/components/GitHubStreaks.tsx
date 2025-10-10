@@ -79,7 +79,7 @@ export function GitHubStreaks({ username }: { username: string }) {
     }
 
     return (
-        <div className="inline-flex items-baseline gap-2 py-2">
+        <div className="inline-flex items-baseline gap-2 ">
             <span className="text-white/90 text-2xl font-light">
                 {streakData.currentStreak}
             </span>

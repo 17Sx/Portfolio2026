@@ -17,6 +17,7 @@ interface Project {
     title: string
     description: string
     image: string
+    modalImage?: string
     demoLink: string
     githubLink: string
     tech: string[]
@@ -30,6 +31,7 @@ const projects: Project[] = [
         title: "Altiora - In Development",
         description: "SaaS platform empowering users to optimize trading, build better habits, achieve goals, and master time management—all in one place.",
         image: "/projects/altiora.png",
+        modalImage: "https://i.imgur.com/zqg76aM.gif",
         demoLink: "https://altiora.pro",
         githubLink: "",
         tech: [
@@ -50,6 +52,7 @@ const projects: Project[] = [
         image: "/projects/bkm.png",
         demoLink: "https://bkm-nine.vercel.app/",
         githubLink: "https://github.com/17Sx/BKM-Poker",
+        modalImage: "https://i.imgur.com/UREzw5T.gif",
         tech: ["React",
             "TypeScript",
             "Next.js",
@@ -66,6 +69,7 @@ const projects: Project[] = [
         image: "/projects/yhtrading.png",
         demoLink: "https://yhtrading.vercel.app",
         githubLink: "https://github.com/17Sx/YH-Trading",
+        modalImage: "https://i.imgur.com/7r2CEPG.gif",
         tech: ["TypeScript",
             "Next.js",
             "TailwindCSS",
@@ -169,7 +173,7 @@ export function Projects() {
                                 <UICard className="bg-transparent border-none rounded-none">
                                     <CardContent className="p-0">
                                         <img
-                                            src={selectedProject.image}
+                                            src={selectedProject.modalImage || selectedProject.image}
                                             alt={selectedProject.title}
                                             className="w-full h-64 object-cover"
                                         />

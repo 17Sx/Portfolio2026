@@ -8,15 +8,9 @@ export function About() {
                 duration={1}
                 delay={0}
             >
-                <h1 className="text-6xl font-light">Always grinding — 24/7,<br /> no breaks, no excuses.</h1>
-            </BlurFadeIn>
-            <BlurFadeIn
-                duration={1}
-                delay={0.2}
-            >
                 <div className='flex gap-4 mt-2'>
-                    <img className='w-15 h-15 mt-1' src="/17sx.png" alt="17Sx" />
-                    <p className='text-white/60 text-3xl'>I'm <span className=''>17Sx</span>, a developer who enjoys <br /> building performant interfaces.</p>
+                    <img className='w-20 h-20 mt-2' src="/17sx.png" alt="17Sx" />
+                    <h1 className='text-white/60 text-5xl font-light'>I'm <span className=''>17Sx</span>, a developer who enjoys <br /> building performant interfaces.</h1>
                 </div>
             </BlurFadeIn>
             <BlurFadeIn
