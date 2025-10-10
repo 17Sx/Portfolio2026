@@ -63,14 +63,13 @@ export function GitHubStreaks({ username }: { username: string }) {
 
     if (loading) {
         return (
-            <div className="w-1/4 py-6">
-                <div className="flex flex-col items-center gap-3">
-                    <div className="relative w-12 h-12">
-                        <div className="absolute inset-0 border border-white/20 rounded-full"></div>
-                        <div className="absolute inset-0 border border-white/50 rounded-full border-t-transparent animate-spin"></div>
-                    </div>
-                    <span className="text-white/40 text-sm font-light">Loading</span>
+            <div className="inline-flex items-baseline gap-2 py-2">
+                <div className="relative w-3 h-3">
+                    <div className="absolute inset-0 border border-white/20 rounded-full"></div>
+                    <div className="absolute inset-0 border border-white/40 rounded-full border-t-transparent animate-spin"></div>
                 </div>
+                <span className="text-white/30 text-sm font-light">—</span>
+                <span className="text-white/40 text-sm font-light">streak</span>
             </div>
         );
     }
@@ -80,15 +79,13 @@ export function GitHubStreaks({ username }: { username: string }) {
     }
 
     return (
-        <div className="w-1/4 py-6">
-            <div className="flex flex-col items-center gap-3">
-                <span className="text-5xl font-light text-white/90">
-                    {streakData.currentStreak}
-                </span>
-                <span className="text-white/50 text-lg font-light">
-                    current streak
-                </span>
-            </div>
+        <div className="inline-flex items-baseline gap-2 py-2">
+            <span className="text-white/90 text-2xl font-light">
+                {streakData.currentStreak}
+            </span>
+            <span className="text-white/40 text-sm font-light">
+                day streak
+            </span>
         </div>
     );
 }

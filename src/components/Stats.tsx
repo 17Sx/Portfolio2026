@@ -12,8 +12,11 @@ export function Stats() {
             </BlurFadeIn>
 
             <BlurFadeIn duration={1} delay={0.9}>
-                <div className="flex gap-4">
-                    <div className="overflow-hidden bg-transparent flex gap-4 p-4">
+                <div className="flex flex-col gap-4">
+                    <div className="flex items-center">
+                        <GitHubStreaks username={username} />
+                    </div>
+                    <div className="overflow-hidden bg-transparent">
                         <GitHubCalendar
                             username={username}
                             colorScheme="dark"
@@ -23,7 +26,6 @@ export function Stats() {
                             blockSize={12}
                             fontSize={14}
                         />
-                        <GitHubStreaks username={username} />
                     </div>
                 </div>
             </BlurFadeIn>

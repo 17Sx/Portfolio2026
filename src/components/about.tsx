@@ -42,7 +42,7 @@ export function About() {
                         { src: "/logos/postgresql-svgrepo-com.svg", alt: "PostgreSQL" },
                         { src: "/logos/stripe-svgrepo-com.svg", alt: "Stripe" },
                     ]}
-                    speed={60}
+                    speed={40}
                     direction="left"
                     width="100%"
                     logoHeight={48}
