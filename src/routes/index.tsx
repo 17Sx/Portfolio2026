@@ -40,7 +40,7 @@ function App() {
           reflection={1}
         />
       </ShaderGradientCanvas>
-      <div className="relative z-10 flex w-full">
+      <div className="relative z-10 flex w-full justify-between">
         <Left />
         <Right />
       </div>

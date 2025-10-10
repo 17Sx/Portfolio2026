@@ -104,7 +104,7 @@ export function Projects() {
     const lockIconRef = useRef<LockIconHandle>(null)
 
     return (
-        <div id="projects" className='flex flex-col gap-4 w-full'>
+        <div id="projects" className='flex flex-col gap-4 w-full mb-20'>
             <h2 className='text-white/50 text-2xl font-light'>Projects</h2>
 
             <div className="flex gap-12 justify-between w-full">

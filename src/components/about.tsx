@@ -10,20 +10,20 @@ export function About() {
             >
                 <div className='flex gap-4 mt-2'>
                     <img className='w-20 h-20 mt-2' src="/17sx.png" alt="17Sx" />
-                    <h1 className='text-white/60 text-5xl font-light'>I'm <span className=''>17Sx</span>, a developer who enjoys <br /> building performant interfaces.</h1>
+                    <h1 className='text-white/80 text-5xl font-light'>I'm <span className=''>17Sx</span>, a developer who enjoys <br /> building performant interfaces.</h1>
                 </div>
             </BlurFadeIn>
             <BlurFadeIn
                 duration={1}
                 delay={0.4}
             >
-                <p className='text-white/50 text-2xl mt-5'>Passionate about entrepreneurship and coding, I try to combine both. I want to give myself the means to make a living from what I love.</p>
+                <p className='text-white/50 text-2xl mt-2 font-medium '>Passionate about entrepreneurship and coding, I try to combine both. I want to give myself the means to make a living from what I love.</p>
             </BlurFadeIn>
             <BlurFadeIn
                 duration={1}
                 delay={0.6}
             >
-                <p className='text-white/50 text-2xl mt-5 font-light'>Here are some of the technologies I work with.</p>
+                <p className='text-white/70 text-2xl mt-5 font-light'>Here are some of the technologies I work with.</p>
                 <LogoLoop
                     logos={[
                         { src: "/logos/react.svg", alt: "React" },

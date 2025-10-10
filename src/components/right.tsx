@@ -3,6 +3,7 @@ import { BlurFadeIn } from './BlurFadeIn';
 import { SectionBar } from './ui/SectionBar';
 import { Stats } from './Stats';
 import { Projects } from './Projects';
+import { Cv } from './Cv';
 
 export function Right() {
     return (
@@ -18,6 +19,8 @@ export function Right() {
                 <Stats />
                 <SectionBar />
                 <Projects />
+                <SectionBar />
+                <Cv />
             </div>
         </div>
     )
