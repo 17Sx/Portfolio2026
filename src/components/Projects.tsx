@@ -1,4 +1,3 @@
-import CardSwap, { Card } from './CardSwap'
 import { useState, useRef } from 'react'
 import {
     Dialog,
@@ -31,7 +30,7 @@ const projects: Project[] = [
         title: "Altiora - In Development",
         description: "SaaS platform empowering users to optimize trading, build better habits, achieve goals, and master time management—all in one place.",
         image: "/projects/altiora.png",
-        modalImage: "https://i.imgur.com/zqg76aM.gif",
+        modalImage: "/gif/altiora.gif",
         demoLink: "https://altiora.pro",
         githubLink: "",
         tech: [
@@ -52,7 +51,7 @@ const projects: Project[] = [
         image: "/projects/bkm.png",
         demoLink: "https://bkm-nine.vercel.app/",
         githubLink: "https://github.com/17Sx/BKM-Poker",
-        modalImage: "https://i.imgur.com/UREzw5T.gif",
+        modalImage: "/gif/bkm.gif",
         tech: ["React",
             "TypeScript",
             "Next.js",
@@ -69,7 +68,7 @@ const projects: Project[] = [
         image: "/projects/yhtrading.png",
         demoLink: "https://yhtrading.vercel.app",
         githubLink: "https://github.com/17Sx/YH-Trading",
-        modalImage: "https://i.imgur.com/7r2CEPG.gif",
+        modalImage: "/gif/yh.gif",
         tech: ["TypeScript",
             "Next.js",
             "TailwindCSS",
@@ -93,64 +92,63 @@ const projects: Project[] = [
         ],
         isOpenSource: true,
         isDemo: false
+    },
+    {
+        id: 5,
+        title: "First Portfolio - 2024",
+        description: "This project showcases my first personal website portfolio, highlighting my skills and experiences as a developer and my first step to learn ThreeJS.",
+        image: "/projects/portfolio24.png",
+        demoLink: "https://17sx.github.io/Portfolio_2024/",
+        modalImage: "/gif/portfolio24.gif",  
+        githubLink: "https://github.com/17Sx/Portfolio_2024",
+        tech: ["Html", "Scss", "Three.js", "JavaScript"],
+        isOpenSource: true,
+        isDemo: true
     }
 ]
 
 export function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-    const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
     const githubIconRef = useRef<GithubIconHandle>(null)
     const externalLinkIconRef = useRef<ExternalLinkIconHandle>(null)
     const lockIconRef = useRef<LockIconHandle>(null)
 
     return (
-        <div id="projects" className='flex flex-col gap-4 w-full mb-20'>
+        <div id="projects" className='flex flex-col gap-6 w-full'>
             <h2 className='text-white/50 text-2xl font-light'>Projects</h2>
 
-            <div className="flex gap-12 justify-between w-full">
-                <div className="flex-1 flex flex-col justify-center gap-4">
-                    <h3 className="text-white text-lg font-semibold">{projects[currentProjectIndex].title}</h3>
-                    <p className="text-white/70 text-xs leading-relaxed">
-                        {projects[currentProjectIndex].description}
-                    </p>
-                    <div className="flex flex-wrap gap-1">
-                        {projects[currentProjectIndex].tech.map((tech, idx) => (
-                            <span
-                                key={idx}
-                                className="px-1.5 py-0.5 bg-white/10 text-white/80 text-xs rounded"
-                            >
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-
-                <div style={{ height: '500px', position: 'relative', width: '700px' }}>
-                    <CardSwap
-                        width={700}
-                        height={400}
-                        cardDistance={60}
-                        verticalDistance={70}
-                        delay={3000}
-                        pauseOnHover={true}
-                        onCardClick={(idx) => {
-                            setSelectedProject(projects[idx])
-                        }}
-                        onOrderChange={(frontIndex) => {
-                            setCurrentProjectIndex(frontIndex)
-                        }}
+            <div className="grid grid-cols-8 gap-4 w-full">
+                {projects.map((project, idx) => (
+                    <div
+                        key={project.id}
+                        onClick={() => setSelectedProject(project)}
+                        className={`
+                            relative overflow-hidden cursor-pointer group
+                            ${idx === 0 ? 'col-span-5 h-64' : idx === 1 ? 'col-span-3 h-64' : idx === 2 ? 'col-span-4 h-64' : idx === 3 ? 'col-span-2 h-64' : 'col-span-2 h-64'}
+                            border border-white/10 transition-all duration-300
+                            hover:border-white/30
+                        `}
                     >
-                        {projects.map((project) => (
-                            <Card key={project.id} className="cursor-pointer">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover border border-black"
-                                />
-                            </Card>
-                        ))}
-                    </CardSwap>
-                </div>
+                        <img
+                            src={project.image}
+                            alt={project.title}
+                            className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${project.modalImage ? 'group-hover:opacity-0' : ''}`}
+                        />
+                        {project.modalImage && (
+                            <img
+                                src={project.modalImage}
+                                alt={project.title}
+                                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+                            />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 className="text-white text-xl font-light mb-2">{project.title}</h3>
+                                <p className="text-white/70 text-sm line-clamp-2">{project.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
 
             <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
