@@ -1,5 +1,5 @@
 import CardSwap, { Card } from './CardSwap'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -10,7 +10,7 @@ import {
 import { Button } from './ui/button'
 import { Badge } from './ui/badge'
 import { Card as UICard, CardContent } from './ui/card'
-import { ExternalLinkIcon, GithubIcon, LockIcon, type GithubIconHandle, type ExternalLinkIconHandle, type LockIconHandle } from './ui/icons'
+import { ExternalLinkIcon, GithubIcon, LockIcon, type GithubIconHandle, type ExternalLinkIconHandle, type LockIconHandle } from './ui/icons/index'
 
 interface Project {
     id: number
