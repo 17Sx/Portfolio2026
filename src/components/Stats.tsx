@@ -1,4 +1,6 @@
 import { BlurFadeIn } from "./BlurFadeIn";
+import GitHubCalendar from "react-github-calendar";
+import { GitHubStreaks } from "./GitHubStreaks";
 
 export function Stats() {
     const username = "17Sx";
@@ -10,13 +12,18 @@ export function Stats() {
             </BlurFadeIn>
 
             <BlurFadeIn duration={1} delay={0.9}>
-                <div className="flex flex-col gap-4">
-                    <div className="overflow-hidden bg-transparent p-4">
-                        <img
-                            src={`https://ghchart.rshah.org/374151/${username}`}
-                            alt="GitHub Contribution Calendar"  
-                            className="w-full"
+                <div className="flex gap-4">
+                    <div className="overflow-hidden bg-transparent flex gap-4 p-4">
+                        <GitHubCalendar
+                            username={username}
+                            colorScheme="dark"
+                            theme={{
+                                dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+                            }}
+                            blockSize={12}
+                            fontSize={14}
                         />
+                        <GitHubStreaks username={username} />
                     </div>
                 </div>
             </BlurFadeIn>
