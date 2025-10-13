@@ -2,7 +2,12 @@ import { BlurFadeIn } from "./BlurFadeIn";
 import { GithubIcon, TwitterIcon, LinkedInIcon, MailIcon } from "./ui/icons";
 import { useEffect, useState } from "react";
 
-export function Left() {
+interface LeftProps {
+    onLinkClick?: () => void;
+    isMobile?: boolean;
+}
+
+export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: false }) {
     const [activeSection, setActiveSection] = useState<string>('about');
 
     useEffect(() => {
@@ -80,8 +85,8 @@ export function Left() {
     }, []);
 
     return (
-        <div className="flex flex-col justify-between h-screen w-1/6 border-r border-white/10">
-            <div className="ml-10 mt-60">
+        <div className={`flex flex-col justify-between h-screen w-full ${isMobile ? '' : 'hidden md:flex md:w-1/6 border-r border-white/10'}`}>
+            <div className="ml-10 mt-20 md:mt-60">
                 <div className="flex flex-col gap-1 text-white/80 text-2xl font-bold">
                     <BlurFadeIn
                         duration={1}
@@ -95,6 +100,7 @@ export function Left() {
                     >
                         <a
                             href="#about"
+                            onClick={onLinkClick}
                             className={`transition-all duration-300 ${activeSection === 'about'
                                 ? 'font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
                                 : 'font-normal text-white/60 hover:text-white/80'
@@ -109,6 +115,7 @@ export function Left() {
                     >
                         <a
                             href="#projects"
+                            onClick={onLinkClick}
                             className={`transition-all duration-300 ${activeSection === 'projects'
                                 ? 'font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
                                 : 'font-normal text-white/60 hover:text-white/80'
@@ -123,6 +130,7 @@ export function Left() {
                     >
                         <a
                             href="#cv"
+                            onClick={onLinkClick}
                             className={`transition-all duration-300 ${activeSection === 'cv'
                                 ? 'font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
                                 : 'font-normal text-white/60 hover:text-white/80'

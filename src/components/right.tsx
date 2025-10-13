@@ -9,7 +9,7 @@ import { Footer } from './Footer';
 export function Right() {
     return (
         <div className="flex flex-col items-center h-screen w-full overflow-y-auto scrollbar-hide">
-            <div className="flex flex-col gap-4 text-white text-2xl font-bold w-6/6 mt-30 pl-50 pr-50">
+            <div className="flex flex-col gap-4 text-white text-2xl font-bold w-full px-6 md:px-50 mt-20 md:mt-30">
                 <About />
                 <BlurFadeIn
                     duration={1}

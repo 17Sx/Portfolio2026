@@ -115,16 +115,17 @@ export function Projects() {
 
     return (
         <div id="projects" className='flex flex-col gap-6 w-full'>
-            <h2 className='text-white/50 text-2xl font-light'>Projects</h2>
+            <h2 className='text-white/50 text-lg md:text-2xl font-light'>Projects</h2>
 
-            <div className="grid grid-cols-8 gap-4 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-8 gap-4 w-full">
                 {projects.map((project, idx) => (
                     <div
                         key={project.id}
                         onClick={() => setSelectedProject(project)}
                         className={`
                             relative overflow-hidden cursor-pointer group
-                            ${idx === 0 ? 'col-span-5 h-64' : idx === 1 ? 'col-span-3 h-64' : idx === 2 ? 'col-span-4 h-64' : idx === 3 ? 'col-span-2 h-64' : 'col-span-2 h-64'}
+                            col-span-1 h-64
+                            ${idx === 0 ? 'md:col-span-5' : idx === 1 ? 'md:col-span-3' : idx === 2 ? 'md:col-span-4' : idx === 3 ? 'md:col-span-2' : 'md:col-span-2'}
                             border border-white/10 transition-all duration-300
                             hover:border-white/30
                         `}
@@ -154,7 +155,7 @@ export function Projects() {
             <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
                 <DialogContent
                     showCloseButton={true}
-                    className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-[#111111] border-none rounded-none"
+                    className="max-w-4xl w-[90vw] md:w-full max-h-[90vh] overflow-y-auto bg-[#111111] border-none rounded-none"
                 >
                     {selectedProject && (
                         <>

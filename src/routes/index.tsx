@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Left } from '../components/left'
 import { Right } from '../components/right'
+import { MobileMenu } from '../components/MobileMenu'
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 
 export const Route = createFileRoute('/')({
@@ -40,6 +41,7 @@ function App() {
           reflection={1}
         />
       </ShaderGradientCanvas>
+      <MobileMenu />
       <div className="relative z-10 flex w-full justify-between">
         <Left />
         <Right />
