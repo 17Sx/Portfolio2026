@@ -4,6 +4,7 @@ import { SectionBar } from './ui/SectionBar';
 import { Stats } from './Stats';
 import { Projects } from './Projects';
 import { Cv } from './Cv';
+import { Footer } from './Footer';
 
 export function Right() {
     return (
@@ -21,6 +22,7 @@ export function Right() {
                 <Projects />
                 <SectionBar />
                 <Cv />
+                <Footer />
             </div>
         </div>
     )

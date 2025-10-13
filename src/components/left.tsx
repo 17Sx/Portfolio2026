@@ -7,11 +7,12 @@ export function Left() {
 
     useEffect(() => {
         const sections = ['about', 'projects', 'cv'];
+        let isBottom = false;
 
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
+                    if (entry.isIntersecting && !isBottom) {
                         setActiveSection(entry.target.id);
                     }
                 });
@@ -29,6 +30,42 @@ export function Left() {
             }
         });
 
+        const handleScroll = () => {
+            const scrollContainer = document.querySelector('.overflow-y-auto');
+            if (scrollContainer) {
+                const wasAtBottom = isBottom;
+                isBottom = scrollContainer.scrollHeight - scrollContainer.scrollTop <= scrollContainer.clientHeight + 100;
+
+                if (isBottom) {
+                    setActiveSection('cv');
+                } else if (wasAtBottom && !isBottom) {
+                    const projectsElement = document.getElementById('projects');
+                    const aboutElement = document.getElementById('about');
+
+                    if (projectsElement) {
+                        const container = scrollContainer.getBoundingClientRect();
+                        const rect = projectsElement.getBoundingClientRect();
+                        if (rect.top >= container.top && rect.top < container.top + container.height * 0.5) {
+                            setActiveSection('projects');
+                            return;
+                        }
+                    }
+                    if (aboutElement) {
+                        const container = scrollContainer.getBoundingClientRect();
+                        const rect = aboutElement.getBoundingClientRect();
+                        if (rect.top >= container.top && rect.top < container.top + container.height * 0.5) {
+                            setActiveSection('about');
+                        }
+                    }
+                }
+            }
+        };
+
+        const scrollContainer = document.querySelector('.overflow-y-auto');
+        if (scrollContainer) {
+            scrollContainer.addEventListener('scroll', handleScroll);
+        }
+
         return () => {
             sections.forEach((id) => {
                 const element = document.getElementById(id);
@@ -36,6 +73,9 @@ export function Left() {
                     observer.unobserve(element);
                 }
             });
+            if (scrollContainer) {
+                scrollContainer.removeEventListener('scroll', handleScroll);
+            }
         };
     }, []);
 
