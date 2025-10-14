@@ -1,6 +1,4 @@
 import { Outlet, createRootRoute, Link } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 import { BlurFadeIn } from '../components/BlurFadeIn'
 import { Button } from '../components/ui/button'
@@ -96,3 +94,12 @@ function NotFound() {
     </div>
   )
 }
+
+export const Route = createRootRoute({
+  component: () => (
+    <div className="flex flex-col h-screen w-full bg-[#111111]">
+      <Outlet />
+    </div>
+  ),
+  notFoundComponent: NotFound,
+})
