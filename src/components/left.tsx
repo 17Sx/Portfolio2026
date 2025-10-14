@@ -165,7 +165,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                             <TwitterIcon size={20} />
                         </a>
                         <a
-                            href="https://linkedin.com"
+                            href="https://linkedin.com/in/noa-obringer"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white/40 hover:text-white/80 transition-colors"
@@ -173,7 +173,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                             <LinkedInIcon size={20} />
                         </a>
                         <a
-                            href="mailto:contact@17sx.com"
+                            href="mailto:noa.obringer@gmail.com"
                             className="text-white/40 hover:text-white/80 transition-colors"
                         >
                             <MailIcon size={20} />
