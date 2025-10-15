@@ -10,7 +10,7 @@ export function About() {
             >
                 <div className='flex gap-4 mt-2'>
                     <img className='w-12 h-12 md:w-20 md:h-20 mt-2' src="/17sx.png" alt="17Sx" />
-                    <h1 className='text-white/80 text-3xl md:text-5xl font-light'>I'm <span className=''>17Sx</span>, a developer who enjoys <br className="hidden md:block" /> building performant interfaces.</h1>
+                    <h1 className='text-white/80 text-3xl md:text-5xl font-light'>I'm <span className=''>Noa.O</span>, a developer who enjoys <br className="hidden md:block" /> building performant interfaces.</h1>
                 </div>
             </BlurFadeIn>
             <BlurFadeIn

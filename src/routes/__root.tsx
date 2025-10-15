@@ -83,7 +83,7 @@ function NotFound() {
             </Link>
             <span className="text-white/20">|</span>
             <a
-              href="mailto:contact@17sx.com"
+              href="mailto:noa.obringer@gmail.com"
               className="hover:text-white/70 transition-colors"
             >
               Contact

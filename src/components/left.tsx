@@ -106,7 +106,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                                 : 'font-normal text-white/60 hover:text-white/80'
                                 }`}
                         >
-                            17Sx
+                            Noa.O
                         </a>
                     </BlurFadeIn>
                     <BlurFadeIn
