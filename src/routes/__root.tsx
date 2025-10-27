@@ -2,8 +2,11 @@ import { Outlet, createRootRoute, Link } from '@tanstack/react-router'
 import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 import { BlurFadeIn } from '../components/BlurFadeIn'
 import { Button } from '../components/ui/button'
+import { useTranslations } from '../i18n/useTranslations'
 
 function NotFound() {
+  const { t } = useTranslations()
+
   return (
     <div className="relative flex h-screen w-full bg-[#1e1e1e] items-center justify-center">
       <ShaderGradientCanvas
@@ -40,19 +43,19 @@ function NotFound() {
       <div className="relative z-10 flex flex-col items-center gap-8 px-6 text-center">
         <BlurFadeIn duration={1} delay={0}>
           <div className="flex items-baseline gap-4">
-            <h1 className="text-8xl md:text-9xl font-light text-white/80">404</h1>
+            <h1 className="text-8xl md:text-9xl font-light text-white/80">{t('404.title')}</h1>
           </div>
         </BlurFadeIn>
 
         <BlurFadeIn duration={1} delay={0.2}>
           <h2 className="text-2xl md:text-4xl font-light text-white/70">
-            Page not found
+            {t('404.subtitle')}
           </h2>
         </BlurFadeIn>
 
         <BlurFadeIn duration={1} delay={0.4}>
           <p className="text-lg md:text-xl text-white/50 max-w-md font-normal">
-            This page doesn't exist or has been moved.
+            {t('404.description')}
           </p>
         </BlurFadeIn>
 
@@ -61,7 +64,7 @@ function NotFound() {
             <Button
               className="bg-white text-black hover:bg-white/90 hover:scale-105 transition-all duration-300 text-base font-normal px-8 py-6"
             >
-              Back to home
+              {t('404.backToHome')}
             </Button>
           </Link>
         </BlurFadeIn>
@@ -72,21 +75,21 @@ function NotFound() {
               to="/"
               className="hover:text-white/70 transition-colors"
             >
-              Projects
+              {t('404.links.projects')}
             </Link>
             <span className="text-white/20">|</span>
             <Link
               to="/"
               className="hover:text-white/70 transition-colors"
             >
-              CV
+              {t('404.links.cv')}
             </Link>
             <span className="text-white/20">|</span>
             <a
               href="mailto:noa.obringer@gmail.com"
               className="hover:text-white/70 transition-colors"
             >
-              Contact
+              {t('404.links.contact')}
             </a>
           </div>
         </BlurFadeIn>

@@ -1,0 +1,124 @@
+{
+  "en": {
+    "nav": {
+      "name": "Noa.O",
+      "projects": "Projects",
+      "cv": "CV"
+    },
+    "about": {
+      "title": "I'm Noa.O, a developer who enjoys building performant interfaces.",
+      "subtitle": "Passionate about entrepreneurship and coding, I try to combine both. I want to give myself the means to make a living from what I love.",
+      "technologies": "Here are some of the technologies I work with."
+    },
+    "projects": {
+      "title": "Projects",
+      "technologies": "Technologies",
+      "liveDemo": "Live Demo",
+      "demoUnavailable": "Demo Unavailable",
+      "viewCode": "View Code",
+      "privateRepo": "Private Repository",
+      "list": [
+        {
+          "title": "Altiora - In Development",
+          "description": "SaaS platform empowering users to optimize trading, build better habits, achieve goals, and master time management—all in one place."
+        },
+        {
+          "title": "BKM Poker - 2025",
+          "description": "SaaS platform for poker players to manage their entire bankroll efficiently."
+        },
+        {
+          "title": "YH Trading - 2025",
+          "description": "A trading platform for traders to manage their entire trades with tracker and statistics."
+        },
+        {
+          "title": "TodoList - 2024",
+          "description": "A basic todo list app built with JS."
+        },
+        {
+          "title": "First Portfolio - 2024",
+          "description": "This project showcases my first personal website portfolio, highlighting my skills and experiences as a developer and my first step to learn ThreeJS."
+        }
+      ]
+    },
+    "cv": {
+      "title": "Curriculum Vitae",
+      "description": "Want to know more about my background and experience?",
+      "viewResume": "View Resume"
+    },
+    "stats": {
+      "quote": "Always grinding — 24/7, no breaks, no excuses."
+    },
+    "404": {
+      "title": "404",
+      "subtitle": "Page not found",
+      "description": "This page doesn't exist or has been moved.",
+      "backToHome": "Back to home",
+      "links": {
+        "projects": "Projects",
+        "cv": "CV",
+        "contact": "Contact"
+      }
+    }
+  },
+  "fr": {
+    "nav": {
+      "name": "Noa.O",
+      "projects": "Projets",
+      "cv": "CV"
+    },
+    "about": {
+      "title": "Je suis Noa.O, un développeur qui aime créer des interfaces performantes.",
+      "subtitle": "Passionné par l'entrepreneuriat et le code, j'essaie de combiner les deux. Je veux me donner les moyens de vivre de ce que j'aime.",
+      "technologies": "Voici quelques technologies avec lesquelles je travaille."
+    },
+    "projects": {
+      "title": "Projets",
+      "technologies": "Technologies",
+      "liveDemo": "Démo",
+      "demoUnavailable": "Démo indisponible",
+      "viewCode": "Voir le code",
+      "privateRepo": "Repository privé",
+      "list": [
+        {
+          "title": "Altiora - En développement",
+          "description": "Plateforme SaaS permettant aux utilisateurs d'optimiser le trading, de construire de meilleures habitudes, d'atteindre leurs objectifs et de maîtriser la gestion du temps."
+        },
+        {
+          "title": "BKM Poker - 2025",
+          "description": "Plateforme SaaS pour les joueurs de poker pour gérer efficacement leur bankroll."
+        },
+        {
+          "title": "YH Trading - 2025",
+          "description": "Une plateforme de trading pour les traders afin de gérer leurs trades avec suivi et statistiques."
+        },
+        {
+          "title": "TodoList - 2024",
+          "description": "Une application de todo list construite en JS."
+        },
+        {
+          "title": "Premier Portfolio - 2024",
+          "description": "Ce projet présente mon premier portfolio personnel, mettant en avant mes compétences et expériences en tant que développeur et mes premiers le ThreeJS."
+        }
+      ]
+    },
+    "cv": {
+      "title": "Curriculum Vitae",
+      "description": "Vous voulez en savoir plus sur mon parcours et mon expérience ?",
+      "viewResume": "Voir le CV"
+    },
+    "stats": {
+      "quote": "Always grinding — 24/7, no breaks, no excuses."
+    },
+    "404": {
+      "title": "404",
+      "subtitle": "Page introuvable",
+      "description": "Cette page n'existe pas ou a été déplacée.",
+      "backToHome": "Retour à l'accueil",
+      "links": {
+        "projects": "Projets",
+        "cv": "CV",
+        "contact": "Contact"
+      }
+    }
+  }
+}

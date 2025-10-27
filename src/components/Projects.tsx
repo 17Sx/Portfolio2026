@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import {
     Dialog,
     DialogContent,
@@ -10,6 +10,7 @@ import { Button } from './ui/button'
 import { Badge } from './ui/badge'
 import { Card as UICard, CardContent } from './ui/card'
 import { ExternalLinkIcon, GithubIcon, LockIcon, type GithubIconHandle, type ExternalLinkIconHandle, type LockIconHandle } from './ui/icons/index'
+import { useTranslations } from '../i18n/useTranslations'
 
 interface Project {
     id: number
@@ -99,7 +100,7 @@ const projects: Project[] = [
         description: "This project showcases my first personal website portfolio, highlighting my skills and experiences as a developer and my first step to learn ThreeJS.",
         image: "/projects/portfolio24.png",
         demoLink: "https://17sx.github.io/Portfolio_2024/",
-        modalImage: "/gif/portfolio24.gif",  
+        modalImage: "/gif/portfolio24.gif",
         githubLink: "https://github.com/17Sx/Portfolio_2024",
         tech: ["Html", "Scss", "Three.js", "JavaScript"],
         isOpenSource: true,
@@ -112,13 +113,23 @@ export function Projects() {
     const githubIconRef = useRef<GithubIconHandle>(null)
     const externalLinkIconRef = useRef<ExternalLinkIconHandle>(null)
     const lockIconRef = useRef<LockIconHandle>(null)
+    const { t, language } = useTranslations()
+
+    const projectsWithTranslations = useMemo(() => {
+        const translations = t('projects.list') as { title: string; description: string }[]
+        return projects.map((project, index) => ({
+            ...project,
+            title: translations[index].title,
+            description: translations[index].description
+        }))
+    }, [language])
 
     return (
         <div id="projects" className='flex flex-col gap-6 w-full'>
-            <h2 className='text-white/50 text-lg md:text-2xl font-light'>Projects</h2>
+            <h2 className='text-white/50 text-lg md:text-2xl font-light'>{t('projects.title')}</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-8 gap-4 w-full">
-                {projects.map((project, idx) => (
+                {projectsWithTranslations.map((project, idx) => (
                     <div
                         key={project.id}
                         onClick={() => setSelectedProject(project)}
@@ -180,7 +191,7 @@ export function Projects() {
                                 </UICard>
 
                                 <div className="space-y-3">
-                                    <h4 className="text-lg font-semibold text-white">Technologies</h4>
+                                    <h4 className="text-lg font-semibold text-white">{t('projects.technologies')}</h4>
                                     <div className="flex flex-wrap gap-2">
                                         {selectedProject.tech.map((tech, idx) => (
                                             <Badge
@@ -209,7 +220,7 @@ export function Projects() {
                                                 className="flex items-center gap-2 hover:scale-105 transition-all duration-300"
                                             >
                                                 <ExternalLinkIcon ref={externalLinkIconRef} size={16} />
-                                                Live Demo
+                                                {t('projects.liveDemo')}
                                             </a>
                                         </Button>
                                     ) : (
@@ -221,7 +232,7 @@ export function Projects() {
                                             onMouseLeave={() => lockIconRef.current?.stopAnimation()}
                                         >
                                             <LockIcon ref={lockIconRef} size={16} className="mr-2" />
-                                            Demo Unavailable
+                                            {t('projects.demoUnavailable')}
                                         </Button>
                                     )}
 
@@ -240,7 +251,7 @@ export function Projects() {
                                                 className="flex items-center gap-2"
                                             >
                                                 <GithubIcon ref={githubIconRef} size={16} />
-                                                View Code
+                                                {t('projects.viewCode')}
                                             </a>
                                         </Button>
                                     ) : (
@@ -252,7 +263,7 @@ export function Projects() {
                                             onMouseLeave={() => lockIconRef.current?.stopAnimation()}
                                         >
                                             <LockIcon ref={lockIconRef} size={16} className="mr-2" />
-                                            Private Repository
+                                            {t('projects.privateRepo')}
                                         </Button>
                                     )}
                                 </div>

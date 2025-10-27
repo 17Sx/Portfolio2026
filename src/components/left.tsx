@@ -1,6 +1,7 @@
 import { BlurFadeIn } from "./BlurFadeIn";
 import { GithubIcon, TwitterIcon, LinkedInIcon, MailIcon } from "./ui/icons";
 import { useEffect, useState } from "react";
+import { useTranslations } from "../i18n/useTranslations";
 
 interface LeftProps {
     onLinkClick?: () => void;
@@ -9,6 +10,7 @@ interface LeftProps {
 
 export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: false }) {
     const [activeSection, setActiveSection] = useState<string>('about');
+    const { t, language, setLanguage } = useTranslations();
 
     useEffect(() => {
         const sections = ['about', 'projects', 'cv'];
@@ -84,6 +86,10 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
         };
     }, []);
 
+    const toggleLanguage = () => {
+        setLanguage(language === 'en' ? 'fr' : 'en');
+    };
+
     return (
         <div className={`flex flex-col justify-between h-screen w-full ${isMobile ? '' : 'hidden md:flex md:w-1/6 border-r border-white/10'}`}>
             <div className="ml-10 mt-20 md:mt-60">
@@ -106,7 +112,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                                 : 'font-normal text-white/60 hover:text-white/80'
                                 }`}
                         >
-                            Noa.O
+                            {t('nav.name')}
                         </a>
                     </BlurFadeIn>
                     <BlurFadeIn
@@ -121,7 +127,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                                 : 'font-normal text-white/60 hover:text-white/80'
                                 }`}
                         >
-                            Projects
+                            {t('nav.projects')}
                         </a>
                     </BlurFadeIn>
                     <BlurFadeIn
@@ -136,7 +142,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                                 : 'font-normal text-white/60 hover:text-white/80'
                                 }`}
                         >
-                            CV
+                            {t('nav.cv')}
                         </a>
                     </BlurFadeIn>
                 </div>
@@ -147,12 +153,12 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                     duration={1}
                     delay={0.6}
                 >
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 h-10 ">
                         <a
                             href="https://github.com/17Sx"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white/40 hover:text-white/80 transition-colors"
+                            className="text-white/40 hover:text-white/80 transition-colors flex justify-center"
                         >
                             <GithubIcon size={20} />
                         </a>
@@ -160,7 +166,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                             href="https://twitter.com/SxSad11"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white/40 hover:text-white/80 transition-colors"
+                            className="text-white/40 hover:text-white/80 transition-colors flex justify-center"
                         >
                             <TwitterIcon size={20} />
                         </a>
@@ -168,16 +174,27 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                             href="https://www.linkedin.com/in/noa-obringer-3a2793291/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white/40 hover:text-white/80 transition-colors"
+                            className="text-white/40 hover:text-white/80 transition-colors flex justify-center"
                         >
                             <LinkedInIcon size={20} />
                         </a>
                         <a
                             href="mailto:noa.obringer@gmail.com"
-                            className="text-white/40 hover:text-white/80 transition-colors"
+                            className="text-white/40 hover:text-white/80 transition-colors flex justify-center"
                         >
                             <MailIcon size={20} />
                         </a>
+                        <button
+                            onClick={toggleLanguage}
+                            className=" text-white/40 hover:text-white/80 transition-all hover:scale-110 flex items-center justify-center"
+                            title={language === 'en' ? 'Changer en français' : 'Switch to English'}
+                        >
+                            <img
+                                src={language === 'en' ? '/en_flag.png' : '/fr_flag.png'}
+                                alt={language === 'en' ? 'English' : 'Français'}
+                                className="w-5 h-5 object-cover"
+                            />
+                        </button>
                     </div>
                 </BlurFadeIn>
             </div>

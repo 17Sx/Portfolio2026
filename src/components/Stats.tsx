@@ -2,10 +2,12 @@ import { BlurFadeIn } from "./BlurFadeIn";
 import GitHubCalendar from "react-github-calendar";
 import { GitHubStreaks } from "./GitHubStreaks";
 import { useState, useEffect } from "react";
+import { useTranslations } from "../i18n/useTranslations";
 
 export function Stats() {
     const username = "17Sx";
     const [isMobile, setIsMobile] = useState(false);
+    const { t } = useTranslations();
 
     useEffect(() => {
         const checkMobile = () => {
@@ -23,7 +25,7 @@ export function Stats() {
             <BlurFadeIn duration={1} delay={0.8}>
                 <div className="flex flex-col gap-3">
                     <blockquote className="text-white/40 text-sm md:text-lg font-light italic border-l-2 border-white/20 pl-4">
-                        ❝Always grinding — 24/7, no breaks, no excuses.❞
+                        ❝{t('stats.quote')}❞
                     </blockquote>
                 </div>
             </BlurFadeIn>
