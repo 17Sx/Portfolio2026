@@ -165,7 +165,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                             <TwitterIcon size={20} />
                         </a>
                         <a
-                            href="https://linkedin.com/in/noa-obringer"
+                            href="https://www.linkedin.com/in/noa-obringer-3a2793291/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white/40 hover:text-white/80 transition-colors"
