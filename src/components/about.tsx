@@ -12,7 +12,7 @@ export function About() {
                 delay={0}
             >
                 <div className='flex gap-4 mt-2'>
-                    <img className='w-12 h-12 md:w-20 md:h-20 mt-2' src="/17sx.png" alt="17Sx" />
+                    <img className='w-12 h-12 md:w-20 md:h-20 mt-2 object-cover' src="/17sx.png" alt="17Sx" />
                     <h1 className='text-white/80 text-3xl md:text-5xl font-light'>{t('about.title')}</h1>
                 </div>
             </BlurFadeIn>
