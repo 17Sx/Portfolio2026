@@ -29,20 +29,20 @@ const projects: Project[] = [
     {
         id: 1,
         title: "Altiora - In Development",
-        description: "SaaS platform empowering users to optimize trading, build better habits, achieve goals, and master time management—all in one place.",
+        description: "SaaS platform empowering users to optimize trading, build better habits, achieve goals, and master time management all in one place.",
         image: "/projects/altiora.png",
         modalImage: "/gif/altiora.gif",
         demoLink: "https://altiora.pro",
-        githubLink: "",
+        githubLink: "https://github.com/AltioraPro/altiora",
         tech: [
             "Next.js",
             "Drizzle ORM",
             "Stripe",
-            "TRPC",
+            "oRPC",
             "Better Auth",
             "Neon Postgres"
         ],
-        isOpenSource: false,
+        isOpenSource: true,
         isDemo: true
     },
     {
