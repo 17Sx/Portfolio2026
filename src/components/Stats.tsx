@@ -32,8 +32,8 @@ export function Stats() {
 
             <BlurFadeIn duration={1} delay={0.9}>
                 <div className="flex flex-col gap-4">
-                    <div className="overflow-x-hidden bg-transparent -mx-8 px-8 md:mx-0 md:px-0">
-                        <div className="min-w-max md:min-w-0">
+                    <div className="w-full overflow-x-auto -mx-8 px-8 md:mx-0 md:px-0">
+                        <div className="w-full min-w-0 [&_*]:max-w-full [&_svg]:max-w-full [&_svg]:h-auto [&_table]:w-full">
                             <GitHubCalendar
                                 username={username}
                                 colorScheme="dark"
