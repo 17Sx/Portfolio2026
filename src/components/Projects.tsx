@@ -42,7 +42,7 @@ const projects: Project[] = [
             "Better Auth",
             "Neon Postgres"
         ],
-        isOpenSource: true,
+        isOpenSource: false,
         isDemo: true
     },
     {
