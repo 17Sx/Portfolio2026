@@ -163,7 +163,7 @@ export function Left({ onLinkClick, isMobile = false }: LeftProps = { isMobile: 
                             <GithubIcon size={20} />
                         </a>
                         <a
-                            href="https://twitter.com/SxSad11"
+                            href="https://x.com/17sx_dev"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white/40 hover:text-white/80 transition-colors flex justify-center"
